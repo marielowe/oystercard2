@@ -66,4 +66,10 @@ describe Oyster_card do
       expect {subject.touch_out(exit_station_double)}.to change{subject.balance}.by(- minimum_charge)
     end
   end
+  it "stores my journey" do
+    subject.top_up(10)
+    subject.touch_in("Westminster")
+    subject.touch_out("Paddington") 
+    expect(subject.completed_journey).to eq ["Westminster", "Paddington"]
+  end
 end
