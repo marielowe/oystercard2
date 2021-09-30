@@ -70,6 +70,9 @@ describe Oyster_card do
     subject.top_up(10)
     subject.touch_in("Westminster")
     subject.touch_out("Paddington") 
-    expect(subject.completed_journey).to eq ["Westminster", "Paddington"]
+    expect(subject.store_journeys).to eq "entry station" => "Westminster", "exit station" => "Paddington"
+  end
+  it "starts with an empty list of journeys" do
+    expect(subject.journeys).to be_empty
   end
 end
