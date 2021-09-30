@@ -30,9 +30,6 @@ class Oyster_card
   end
 
   def store_journeys
-    # @completed_journey << @entry_station
-    # @completed_journey << @exit_station
-    # @journeys << @completed_journey
     @completed_journey["entry station"] = @entry_station
     @completed_journey["exit station"] = @exit_station
     @completed_journey
